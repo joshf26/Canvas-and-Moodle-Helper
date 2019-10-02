@@ -3,15 +3,7 @@ const openInNewTabIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" hei
 
 window.onload = () => {
 	if (window.location.hostname === 'moodle.cs.colorado.edu') {
-		// We are on a Moodle assignment page.
-
-		// Find all of the download links on the page.
-		const links = document.querySelectorAll('.fileuploadsubmission > a');
-		links.forEach(link => {
-			// Remove the 'forcedownload=1' parameter, which is what causes the file
-			// to be automatically downloaded.
-			link.href = link.href.replace('forcedownload=1', '')
-		});
+		document.body.innerHTML = null;
 	} else {
 		// We are on a Canvas document page.
 
