@@ -4,7 +4,7 @@
 	"description": "Changes some things I don't like about Canvas and Moodle.",
 	"content_scripts": [{
 		"matches": [
-			"https://canvas.colorado.edu/courses/*/files/*",
+			"https://canvas.colorado.edu/*files/*",
 			"https://moodle.cs.colorado.edu/mod/assign/view.php?id=*"
 		],
 		"js": ["script.js"]
