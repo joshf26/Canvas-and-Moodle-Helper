@@ -3,11 +3,19 @@ const openInNewTabIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" hei
 
 function addIcons(observer) {
 	document.querySelectorAll('.ef-directory a.ef-name-col__link').forEach(element => {
-		const parent = element.parentElement;
+		const parent = element.parentElement.parentElement;
 		const fileId = element.href.split('/')[4];
 		const url = `${window.location.href.split('/').slice(0, 6).join('/')}/${fileId}/file_preview`;
 
-		if (!parent.innerHTML.includes(url)) {
+		if (element.querySelector('i.mimeClass-folder')) return;
+
+		element.setAttribute('href', '#');
+		element.parentElement.addEventListener('click', () => {
+			parent.click();
+			document.querySelector('.btn-view').click();
+		});
+
+		if (!parent.innerHTML.includes(url.split(fileId)[0])) {
 			parent.innerHTML = `${parent.innerHTML}<a href="${url}" target="_blank">${openInNewTabIcon}</a>`;
 		}
 
@@ -29,6 +37,12 @@ window.onload = () => {
 		});
 	} else {
 		// We are on a Canvas page.
+
+		if (window.location.href.endsWith('/file_preview')) {
+			// We are on a Canvas file preview page and should not do anything.
+
+			return;
+		}
 
 		if (document.querySelector('.ef-folder-content')) {
 			// We are on a Canvas file browser page.
