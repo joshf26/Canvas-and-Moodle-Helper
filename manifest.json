@@ -1,6 +1,6 @@
 {
 	"name": "Canvas and Moodle Helper",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Changes some things I don't like about Canvas and Moodle.",
 	"content_scripts": [{
 		"matches": [
