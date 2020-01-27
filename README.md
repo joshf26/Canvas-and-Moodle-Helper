@@ -10,13 +10,13 @@ This Chrome extension fixes both by modifying the web pages.
 - On a page like the one below, the document that you are viewing is shown in a tiny window on the page.
   This makes it hard to read since you have to scroll frequently to view the full page.
   The only way to make the document bigger is to either enter fullscreen mode, or download the document.
-  ![Canvas Before](screenshots/Canvas%20Document%20Before.png)
+  ![Canvas Document Before](screenshots/Canvas%20Document%20Before.png)
   This extension adds an "Open In New Tab" button (shown below), which opens the document in a new tab. 
-  ![Canvas Before](screenshots/Canvas%20Document%20After.png)
+  ![Canvas Document After](screenshots/Canvas%20Document%20After.png)
 - On a page like the one below, clicking on a file opens it in the current tab, and clicking "open in new tab" will download the file to your computer.
-  ![Canvas Before](screenshots/Canvas%20File%20Before.png)
+  ![Canvas File Before](screenshots/Canvas%20File%20Before.png)
   This extension adds an "Open In New Tab" button (shown below), which actually opens the document in a new tab instead of downloading it.
-  ![Canvas Before](screenshots/Canvas%20File%20After.png)
+  ![Canvas File After](screenshots/Canvas%20File%20After.png)
 
 ### Changes to Moodle
 - On a page like the one below, clicking on the "Homework Assignment.pdf" link will automatically download the PDF to your computer.
