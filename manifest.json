@@ -6,7 +6,8 @@
 		"matches": [
 			"https://canvas.colorado.edu/files*",
 			"https://canvas.colorado.edu/courses/*/files*",
-			"https://moodle.cs.colorado.edu/mod/assign/view.php?id=*"
+			"https://moodle.cs.colorado.edu/mod/assign/view.php?id=*",
+			"https://moodle.cs.colorado.edu/mod/quiz/review.php?attempt=*"
 		],
 		"js": ["script.js"]
 	}],

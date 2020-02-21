@@ -32,15 +32,40 @@ function addIcons(observer) {
 
 window.onload = () => {
 	if (window.location.hostname === 'moodle.cs.colorado.edu') {
-		// We are on a Moodle assignment page.
+		// We are on a Moodle page.
 
-		// Find all of the download links on the page.
-		const links = document.querySelectorAll('.fileuploadsubmission > a');
-		links.forEach(link => {
-			// Remove the 'forcedownload=1' parameter, which is what causes the file
-			// to be automatically downloaded.
-			link.href = link.href.replace('forcedownload=1', '')
-		});
+		if (window.location.href.startsWith('https://moodle.cs.colorado.edu/mod/quiz/review.php')) {
+			// We are on a Moodle quiz review.
+
+			// Find all select questions.
+			const selectQuestions = document.querySelectorAll('.select');
+			selectQuestions.forEach(selectQuestion => {
+				// Make a new select element behind the old one that is active, so the user can click it and view the
+				// options.
+				const hiddenSelect = selectQuestion.cloneNode(true);
+
+				selectQuestion.style.pointerEvents = 'none';
+				selectQuestion.style.position = 'absolute';
+				selectQuestion.style.setProperty('margin-left', '20px', 'important');
+
+				hiddenSelect.removeAttribute('disabled');
+				hiddenSelect.style.position = 'absolute';
+				hiddenSelect.style.setProperty('margin-left', '20px', 'important');
+
+				const selectQuestionParent = selectQuestion.parentElement;
+				selectQuestionParent.insertBefore(hiddenSelect, selectQuestionParent.childNodes[0]);
+			});
+		} else {
+			// We are on a Moodle assignment page.
+
+			// Find all of the download links on the page.
+			const links = document.querySelectorAll('.fileuploadsubmission > a');
+			links.forEach(link => {
+				// Remove the 'forcedownload=1' parameter, which is what causes the file
+				// to be automatically downloaded.
+				link.href = link.href.replace('forcedownload=1', '')
+			});
+		}
 	} else {
 		// We are on a Canvas page.
 
