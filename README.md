@@ -23,7 +23,10 @@ This Chrome extension fixes both by modifying the web pages.
   This clutters up your downloads folder.
   This extension converts these links into "new tab" links so they do not download automatically.
   Downloading is still possible by clicking the download button on the new tab that opens.
-  ![Moodle Screenshot](screenshots/Moodle.png)
+  ![Moodle Homework Download](screenshots/Moodle%20Homework%20Download.png)
+- On a page like the one below, select elements on the quiz you are reviewing are greyed out and only the answer you chose is shown.
+  This extension allows you to click on the greyed out select element and view the other answers, including the ones you did not choose.
+  ![Moodle Select](screenshots/Moodle%20Select.png)
   
 ### How To Install
 1. Clone this repository into any location on your computer.
